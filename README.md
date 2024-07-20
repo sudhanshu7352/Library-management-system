@@ -2,6 +2,18 @@
 
 This is a Library Management System built using the MERN stack (MongoDB, Express.js, React, Node.js). This application allows users to manage library books and track the borrowing and returning of books. It includes user authentication using JWT and a responsive UI built with Material UI.
 
+### Live Demo Link :
+https://library-management-system-ffxyphv6h-sudhanshu7352s-projects.vercel.app/login
+
+### Application snapshots :
+Login Page
+![image](https://github.com/user-attachments/assets/9dc95446-f278-4d86-a02d-d134b85c472f)
+Register page
+![image](https://github.com/user-attachments/assets/a69c7b7c-ebde-4e2e-b758-05af638db516)
+Book List page
+![image](https://github.com/user-attachments/assets/e3a4ba7b-b5c1-4b62-b576-901cff5679f0)
+
+
 ## Features
 
 - User authentication with JWT
@@ -107,4 +119,4 @@ The application includes a global error handler for the backend to catch and man
 
 ## Live Demo
 
-If possible, provide a link to a live demo of your deployed application.
+(https://library-management-system-ffxyphv6h-sudhanshu7352s-projects.vercel.app/login)
