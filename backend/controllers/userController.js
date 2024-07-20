@@ -12,19 +12,25 @@ const registerUser = async (req, res) => {
     if (userExists) {
         return res.status(400).json({ message: 'User already exists' });
     }
+    try {
+        const user = new User({ username, email, password });
 
-    const user = await User.create({ username, email, password });
+        await user.save();
 
-    if (user) {
         res.status(201).json({
             _id: user._id,
             username: user.username,
             email: user.email,
             token: generateToken(user._id),
         });
-    } else {
-        res.status(400).json({ message: 'Invalid user data' });
+    } catch (error) {
+        if (error.code === 11000) {
+            // Duplicate key error
+            return res.status(400).json({ message: 'User already exists with this username' });
+        }
+        res.status(500).json({ message: 'Server error' });
     }
+   
 };
 
 const authUser = async (req, res) => {

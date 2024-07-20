@@ -22,35 +22,34 @@ const getBooks = async (req, res) => {
     res.json(books);
 };
 
-const updateBook = async (req, res) => {
-    const { id } = req.params;
-    const { title, author, isbn, available } = req.body;
+const updateBook = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const updateData = req.body;
+        const updatedBook = await Book.findByIdAndUpdate(id, updateData, { new: true, runValidators: true });
+        
+        if (!updatedBook) {
+            return res.status(404).json({ message: 'Book not found' });
+        }
 
-    const book = await Book.findById(id);
-
-    if (book) {
-        book.title = title || book.title;
-        book.author = author || book.author;
-        book.isbn = isbn || book.isbn;
-        book.available = available !== undefined ? available : book.available;
-
-        const updatedBook = await book.save();
-        res.json(updatedBook);
-    } else {
-        res.status(404).json({ message: 'Book not found' });
+        res.status(200).json(updatedBook);
+    } catch (error) {
+        next(error); // Passing error to the global error handler
     }
 };
 
-const deleteBook = async (req, res) => {
-    const { id } = req.params;
+const deleteBook = async (req, res, next) => {
+    try {
+        const { id } = req.params;
+        const book = await Book.findByIdAndDelete(id);
 
-    const book = await Book.findById(id);
+        if (!book) {
+            return res.status(404).json({ message: 'Book not found' });
+        }
 
-    if (book) {
-        await book.remove();
-        res.json({ message: 'Book removed' });
-    } else {
-        res.status(404).json({ message: 'Book not found' });
+        res.status(200).json({ message: 'Book deleted successfully' });
+    } catch (error) {
+        next(error);
     }
 };
 

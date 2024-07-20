@@ -7,14 +7,14 @@ router.route('/')
     .post(authenticateUserJWT, addBook)
     .get(getBooks);
 
-router.route('/')
+router.route('/:id')
     .put(authenticateUserJWT, updateBook)
     .delete(authenticateUserJWT, deleteBook);
 
-router.route('/borrow')
+router.route('/:id/borrow')
     .put(authenticateUserJWT, borrowBook);
 
-router.route('/return ')
+router.route('/:id/return')
     .put(authenticateUserJWT, returnBook);
 
 module.exports = router;
