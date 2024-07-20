@@ -14,50 +14,51 @@ This is a Library Management System built using the MERN stack (MongoDB, Express
 ### Backend
 
 1. Clone the repository:
-   \`\`\`bash
-   git clone https://github.com/yourusername/library-management-system.git
+   ```sh
+   git clone https:/github.com/sudhanshu7352/library-management-system.git
    cd library-management-system/backend
-   \`\`\`
+   ```
 
 2. Install dependencies:
-   \`\`\`bash
-   npm install
-   \`\`\`
+   ```sh
+    npm install
+    ```
 
 3. Set up environment variables:
-   Create a \`.env\` file in the \`backend\` directory and add the following variables:
-   \`\`\`
+   Create a `.env` file in the `backend` directory and add the following variables:
+  ```env
+   PORT =5000
    MONGO_URI=<Your MongoDB URI>
    JWT_SECRET=<Your JWT Secret>
-   \`\`\`
+   ```
 
 4. Start the backend server:
-   \`\`\`bash
+  ```sh
    npm start
-   \`\`\`
+   ```
 
 ### Frontend
 
-1. Navigate to the \`frontend\` directory:
-   \`\`\`bash
+1. Navigate to the `frontend` directory:
+   ```sh
    cd ../frontend
-   \`\`\`
+   ```
 
 2. Install dependencies:
-   \`\`\`bash
+   ```sh
    npm install
-   \`\`\`
+   ```
 
 3. Set up environment variables:
-   Create a \`.env\` file in the \`frontend\` directory and add the following variable:
-   \`\`\`
+   Create a `.env` file in the `frontend` directory and add the following variable:
+   ```sh
    REACT_APP_API_URL=http://localhost:5000/api
-   \`\`\`
+   ```
 
 4. Start the frontend server:
-   \`\`\`bash
+   ```sh
    npm start
-   \`\`\`
+   ```
 
 ## Usage
 
@@ -85,20 +86,20 @@ This is a Library Management System built using the MERN stack (MongoDB, Express
 
 ### Backend
 
-- \`server.js\` - Entry point for the backend server
-- \`controllers/\` - Contains the logic for handling requests
-- \`models/\` - Contains Mongoose models
-- \`routes/\` - Defines API routes
-- \`middleware/\` - Contains middleware functions for authentication and error handling
+- `server.js` - Entry point for the backend server
+- `controllers` - Contains the logic for handling requests
+- `models` - Contains Mongoose models
+- `routes` - Defines API routes
+- `middleware` - Contains middleware functions for authentication and error handling
 
 ### Frontend
 
-- \`src/\`
-  - \`components/\` - Contains React components
-  - \`contexts/\` - Contains context providers for state management
-  - \`pages/\` - Contains page components
-  - \`App.js\` - Main application component
-  - \`index.js\` - Entry point for the React application
+- `src`
+  - `components` - Contains React components
+  - `contexts` - Contains context providers for state management
+  - `pages` - Contains page components
+  - `App.js` - Main application component
+  - `index.js` - Entry point for the React application
 
 ## Error Handling
 
